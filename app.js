@@ -3,8 +3,9 @@ const show = document.querySelector(".show");
 const output = document.querySelector(".output");
 
 show.addEventListener("click", () => {
-  output.innerHTML = spongebobify(input.value);
-  //console.log(spongebobify(input.value));
+  output.value = spongebobify(input.value);
+  output.select();
+  document.execCommand("copy");
 });
 
 function spongebobify(text) {
