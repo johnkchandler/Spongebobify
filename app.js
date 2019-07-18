@@ -9,23 +9,22 @@ show.addEventListener("click", () => {
 });
 
 function spongebobify(text) {
-  let string = text.split("");
   let sbtext = [];
   let odd = false;
 
-  string.forEach(element => {
-    if (element === " ") {
-      sbtext.push(element);
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] === " ") {
+      sbtext.push(text[i]);
     } else {
       if (!odd) {
-        sbtext.push(element.toUpperCase());
+        sbtext.push(text[i].toUpperCase());
         odd = true;
       } else {
-        sbtext.push(element.toLowerCase());
+        sbtext.push(text[i].toLowerCase());
         odd = false;
       }
     }
-  });
+  }
 
   let combined = "";
   sbtext.forEach(element => {
